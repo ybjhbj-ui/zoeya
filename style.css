@@ -1,0 +1,206 @@
+/* =========================================
+   PALETTE "DARK LUXE" & VARIABLES
+   ========================================= */
+:root {
+    --bg-black: #050505;     
+    --bg-dark: #111111;      
+    --gold-primary: #D4AF37; 
+    --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7);
+    --text-white: #ffffff;
+    --text-grey: #a0a0a0;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { background-color: var(--bg-black); color: var(--text-white); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
+.text-center { text-align: center; }
+
+/* =========================================
+   HEADER VIP & LOGO
+   ========================================= */
+header {
+    display: flex; justify-content: space-between; align-items: center; padding: 20px 40px;
+    background: rgba(5, 5, 5, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15); backdrop-filter: blur(10px);
+}
+.header-logo { max-height: 45px; width: auto; object-fit: contain; }
+.logo-text { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; letter-spacing: 3px; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+nav { display: flex; align-items: center; gap: 25px; }
+nav a { color: var(--text-white); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; font-weight: 500;}
+nav a:hover { color: var(--gold-primary); }
+.btn-gold-outline { border: 1px solid var(--gold-primary); padding: 8px 18px; color: var(--gold-primary) !important; transition: 0.3s; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;}
+.btn-gold-outline:hover { background: var(--gold-primary); color: #000 !important; }
+
+/* =========================================
+   HERO SPLIT (2 PHOTOS & SWAP) - TAILLES RÉDUITES
+   ========================================= */
+.hero-split { display: flex; align-items: center; justify-content: space-between; gap: 60px; min-height: 85vh; padding-top: 80px; }
+.hero-text { width: 50%; text-align: left; }
+.hero-text h1 { font-family: var(--font-heading); font-size: 3.5rem; line-height: 1; margin-bottom: 20px; font-weight: 400; color: #fff; }
+.hero-titles { list-style: none; margin-bottom: 30px; border-left: 2px solid var(--gold-primary); padding-left: 20px; }
+.hero-titles li { font-family: var(--font-heading); font-size: 1.1rem; color: var(--gold-primary); margin-bottom: 10px; font-weight: 600; letter-spacing: 1px;}
+.bio-short { color: var(--text-grey); font-size: 1rem; line-height: 1.7; margin-bottom: 15px; }
+
+/* --- CONFIGURATION DES IMAGES (TAILLE RÉDUITE ICI) --- */
+.hero-images { 
+    width: 50%; height: 480px; /* Hauteur réduite de 600 à 480px */
+    position: relative; cursor: pointer; 
+}
+.hero-images img { 
+    position: absolute; border-radius: 8px; box-shadow: 0 25px 50px rgba(0,0,0,0.8); 
+    object-fit: cover; transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.img-back { 
+    width: 60%; height: 70%; /* Pourcentages réduits */
+    top: 0; right: 0; z-index: 1; filter: brightness(0.5) grayscale(20%); border: 1px solid #333; 
+}
+.img-front { 
+    width: 65%; height: 75%; /* Pourcentages réduits */
+    bottom: 0; left: 0; z-index: 2; border: 2px solid var(--gold-primary); object-position: top center; 
+}
+.hero-images:not(.is-swapped):hover .img-back { transform: translate(15px, -15px); filter: brightness(0.8); }
+
+/* ÉTAT ÉCHANGÉ (SWAP) */
+.hero-images.is-swapped .img-front {
+    z-index: 1; transform: translate(calc(100% - 65% + 15px), calc(-100% + 75% - 15px)) scale(0.9);
+    filter: brightness(0.5) grayscale(20%); border-color: transparent;
+}
+.hero-images.is-swapped .img-back {
+    z-index: 3; transform: translate(calc(-100% + 60% - 15px), calc(100% - 70% + 15px)) scale(1.05);
+    filter: brightness(1) grayscale(0%); border: 2px solid var(--gold-primary); object-position: top center;
+}
+
+/* BOUTONS */
+.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+.btn-gold, .btn-dark { padding: 14px 30px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; border: none; cursor: pointer; transition: 0.4s; font-family: var(--font-body); font-size: 0.8rem; display: inline-block; }
+.btn-gold { background: var(--gold-gradient); color: #000; }
+.btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 25px var(--gold-glow); }
+.btn-dark { background: transparent; border: 1px solid var(--text-white); color: var(--text-white); }
+.btn-dark:hover { border-color: var(--gold-primary); color: var(--gold-primary); }
+
+/* =========================================
+   SECTIONS COMMUNES
+   ========================================= */
+.section-dark { background-color: var(--bg-black); padding: 80px 0; }
+.section-black { background-color: var(--bg-dark); padding: 80px 0; border-top: 1px solid #222; border-bottom: 1px solid #222; }
+.section-header { margin-bottom: 50px; }
+.section-header h2 { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 400; }
+.section-header h2 span { color: var(--gold-primary); font-style: italic; }
+.divider { width: 60px; height: 2px; background: var(--gold-primary); margin: 20px auto; }
+.divider-left { width: 60px; height: 2px; background: var(--gold-primary); margin: 20px 0; }
+.section-header p { color: var(--text-grey); font-size: 1rem; }
+
+/* =========================================
+   CARTES LUXE & AGENCE
+   ========================================= */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.luxe-card { background: var(--bg-dark); padding: 35px 25px; border: 1px solid #222; transition: 0.4s; position: relative; overflow: hidden; }
+.luxe-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--gold-gradient); transform: scaleX(0); transform-origin: left; transition: 0.4s; }
+.luxe-card:hover::before { transform: scaleX(1); }
+.luxe-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.8); border-color: #333; }
+.card-icon { font-size: 2rem; margin-bottom: 15px; }
+.luxe-card h3 { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 10px; color: #fff; }
+.luxe-card p { color: var(--text-grey); margin-bottom: 15px; font-size: 0.9rem; line-height: 1.7; }
+.prix-or { color: var(--gold-primary) !important; font-size: 1.1rem !important; font-weight: 600; }
+.liste-soins { color: var(--text-grey); margin-bottom: 20px; padding-left: 20px; font-size: 0.85rem; line-height: 1.8; }
+.link-gold { color: var(--gold-primary); text-decoration: none; font-weight: 500; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; }
+.link-gold:hover { color: #fff; letter-spacing: 3px; }
+
+.agency-wrapper { display: flex; align-items: center; gap: 50px; }
+.agency-text { flex: 1; }
+.agency-text h2 { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 400; }
+.agency-text h2 span { color: var(--gold-primary); font-style: italic; }
+.agency-desc { color: var(--text-grey); font-size: 1rem; margin-bottom: 25px; line-height: 1.8; }
+.box-vip { background: rgba(212, 175, 55, 0.05); border: 1px solid rgba(212, 175, 55, 0.2); padding: 25px; margin-bottom: 30px; }
+.agency-list li { margin-bottom: 15px; font-size: 0.9rem; color: #ddd; display: flex; align-items: flex-start; gap: 10px; }
+.gold-bullet { color: var(--gold-primary); font-size: 1.1rem; }
+.agency-visual { flex: 1; display: flex; justify-content: center; }
+.gold-frame { padding: 15px; background: var(--gold-gradient); width: 100%; max-width: 400px; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+.inner-dark { background: var(--bg-black); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 30px; text-align: center; }
+.inner-dark p { font-family: var(--font-heading); font-size: 1.2rem; color: var(--gold-primary); font-style: italic; line-height: 1.6; }
+
+/* =========================================
+   PORTFOLIO & LIGHTBOX
+   ========================================= */
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+.portfolio-item { height: 250px; overflow: hidden; border-radius: 5px; border: 1px solid #222; }
+.portfolio-item img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease; }
+.portfolio-item:hover img { transform: scale(1.05); }
+
+.cat-title { font-family: var(--font-heading); color: var(--gold-primary); text-align: left; font-size: 1.8rem; border-bottom: 1px solid #222; padding-bottom: 10px; margin: 50px 0 25px; }
+.zoomable { cursor: pointer; }
+.lightbox { position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); display: none; align-items: center; justify-content: center; }
+.lightbox.active { display: flex; }
+.lightbox-content { max-width: 90%; max-height: 85%; border: 2px solid var(--gold-primary); }
+.close-lightbox { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; }
+
+/* =========================================
+   CONTACT
+   ========================================= */
+.booking-container { display: flex; gap: 30px; }
+.booking-beauty, .booking-project { flex: 1; background: var(--bg-dark); padding: 40px; border: 1px solid #222; }
+.booking-container h3 { font-family: var(--font-heading); font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 10px; }
+.sub-form { color: var(--text-grey); font-size: 0.9rem; margin-bottom: 25px; }
+.form-row { display: flex; gap: 15px; width: 100%; }
+.form-row input { flex: 1; }
+.vip-form input, .vip-form textarea, .custom-select { width: 100%; padding: 15px; margin-bottom: 20px; background: #050505; border: 1px solid #333; color: #fff; font-family: var(--font-body); transition: 0.3s; font-size: 16px; }
+.custom-select { -webkit-appearance: none; appearance: none; cursor: pointer; }
+.vip-form input:focus, .vip-form textarea:focus, .custom-select:focus { outline: none; border-color: var(--gold-primary); }
+.full-width { width: 100%; text-align: center; }
+
+footer { background: #000; padding: 40px 20px; border-top: 1px solid #111; }
+
+/* =========================================
+   📱 MOBILE (TAILLES RÉDUITES AUSSI)
+   ========================================= */
+@media (max-width: 900px) {
+    header { flex-direction: column; padding: 15px; }
+    nav { margin-top: 10px; gap: 10px; font-size: 0.7rem; }
+    .hide-mobile { display: none; }
+
+    .hero-split { flex-direction: column; padding-top: 30px; gap: 30px; }
+    .hero-text { width: 100%; text-align: center; order: 2; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-titles { border-left: none; padding-left: 0; }
+    .hero-buttons { justify-content: center !important; }
+
+    /* Réduction de la taille du bloc images sur mobile */
+    .hero-images { width: 100%; height: 350px; /* Réduit de 450 à 350px */ order: 1; }
+    .img-back { width: 65%; height: 75%; } /* Pourcentages réduits */
+    .img-front { width: 70%; height: 80%; } /* Pourcentages réduits */
+    .hero-images.is-swapped .img-front { opacity: 0; z-index: 0;}
+    .hero-images.is-swapped .img-back { width: 70%; height: 80%; bottom: 0; left: 0; top: auto; right: auto; filter: brightness(1); border: 2px solid var(--gold-primary); z-index: 5; transform: none;}
+
+    .agency-wrapper, .booking-container { flex-direction: column; gap: 30px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .portfolio-grid, .massive-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-row { flex-direction: column; gap: 0; }
+}
+/* =========================================
+   AJUSTEMENTS DE CADRAGE SUR-MESURE
+   (Ciblage précis des photos pour recadrer)
+   ========================================= */
+
+/* --- Lash Studio (Grille n°1) --- */
+/* La 2ème photo de cils : Focus vers la gauche */
+.massive-grid:nth-of-type(1) .portfolio-item:nth-child(2) img {
+    object-position: left center; /* Décale le cadre vers la gauche de la photo */
+}
+
+/* --- Makeup Studio (Grille n°2) --- */
+/* La 1ère photo de makeup : Descendre le focus (voir plus bas) */
+.massive-grid:nth-of-type(2) .portfolio-item:nth-child(1) img {
+    object-position: center bottom; /* Cale le cadre sur le bas de la photo */
+}
+
+/* --- Shooting (Grille n°3) --- */
+/* On regroupe toutes celles qui doivent "descendre" */
+.massive-grid:nth-of-type(3) .portfolio-item:nth-child(2) img,  /* Shooting N°2 */
+.massive-grid:nth-of-type(3) .portfolio-item:nth-child(5) img,  /* Shooting N°5 */
+.massive-grid:nth-of-type(3) .portfolio-item:nth-child(14) img, /* Shooting N°14 */
+.massive-grid:nth-of-type(3) .portfolio-item:nth-child(22) img  /* Shooting N°22 */
+{
+    object-position: center bottom; /* Cale le cadre sur le bas de ces photos */
+}

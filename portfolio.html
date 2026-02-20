@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio • ZOEYA GLOWW</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: var(--bg-black);">
+
+    <header>
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none;">
+                <img src="logo.png" alt="Zoeya Gloww Logo" class="header-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text" style="display:none;">ZOEYA GLOWW</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html#accueil">Retour à l'accueil</a>
+            <a href="index.html#contact" class="btn-gold-outline hide-mobile">Booker une session</a>
+        </nav>
+    </header>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <section class="section-black" style="padding-top: 100px; min-height: 100vh;">
+        <div class="container text-center">
+            <div class="section-header fade-in">
+                <h2>Galerie <span>Complète</span></h2>
+                <div class="divider"></div>
+                <p>Cliquez sur une image pour l'agrandir.</p>
+            </div>
+            
+            <h3 class="cat-title">Lash Studio</h3>
+            <div class="portfolio-grid massive-grid fade-in">
+                <div class="portfolio-item"><img src="cils-1.jpg" class="zoomable" alt="Cils 1"></div>
+                <div class="portfolio-item"><img src="cils-2.jpg" class="zoomable" alt="Cils 2"></div>
+            </div>
+
+            <h3 class="cat-title">Makeup Studio</h3>
+            <div class="portfolio-grid massive-grid fade-in">
+                <div class="portfolio-item"><img src="makeup-1.jpg" class="zoomable" alt="Makeup 1"></div>
+                <div class="portfolio-item"><img src="makeup-2.jpg" class="zoomable" alt="Makeup 2"></div>
+                <div class="portfolio-item"><img src="makeup-3.jpg" class="zoomable" alt="Makeup 3"></div>
+            </div>
+
+            <h3 class="cat-title">Direction Artistique & Shootings</h3>
+            <div class="portfolio-grid massive-grid fade-in">
+                <div class="portfolio-item"><img src="shooting-1.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-2.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-3.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-4.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-5.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-6.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-7.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-8.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-9.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-10.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-11.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-12.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-13.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-14.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-15.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-16.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-17.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-18.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-19.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-20.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-21.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-22.jpg" class="zoomable"></div>
+                <div class="portfolio-item"><img src="shooting-23.jpg" class="zoomable"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p style="font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 3px; color: var(--gold-primary); margin-bottom: 10px;">ZOEYA GLOWW</p>
+            <p class="footer-credits" style="margin-top: 30px;">© 2024 Zoeya Gloww. Digital Experience par Yac Design</p>
+        </div>
+    </footer>
+
+    <script>
+        // Système de Zoom (Lightbox)
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightbox.addEventListener('click', () => lightbox.classList.remove('active'));
+        document.querySelectorAll('.zoomable').forEach(image => {
+            image.addEventListener('click', e => {
+                lightbox.classList.add('active');
+                lightboxImg.src = e.target.src;
+                e.stopPropagation(); // Empêche la fermeture immédiate si on clique sur l'image elle-même
+            });
+        });
+    </script>
+
+</body>
+</html>
