@@ -18,83 +18,76 @@
         </div>
     </header>
 
-    <section class="container text-center" style="padding-top: 40px; flex: 1;">
+    <section class="container text-center" style="padding-top: 30px; flex: 1;">
         
         <h2 class="contact-header">Réservation</h2>
         <p class="subtitle" style="margin-bottom: 30px;">Choisissez votre prestation</p>
-        <div class="arrow-down" style="margin-top: -10px;">⤵</div>
+        
+        <div class="arrow-down">⤵</div>
 
-        <div class="booking-container">
+        <div class="booking-container" style="text-align: left;">
             
-           <div class="form-dark-box" style="flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+            <div class="form-dark-box" style="flex: 1; display: flex; flex-direction: column;">
                 <h3>LASH STUDIO (Cils)</h3>
-                <p style="margin-bottom: 20px;">Sélectionnez votre pose pour accéder directement à mon agenda en ligne.</p>
-                <div style="font-size: 3rem; margin-bottom: 20px;">👁️</div>
+                <p style="margin-bottom: 25px;">Sélectionnez votre pose pour accéder directement à mon agenda en ligne.</p>
+                <div style="font-size: 3rem; margin-bottom: 30px; text-align: center;">👁️</div>
                 
                 <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <a href="LIEN_ZCAL_CILS_A_CILS" target="_blank" class="btn-gold-3d" style="width: 100%; font-size: 0.85rem; padding: 12px;">Cils à Cils (Naturel) - 30€</a>
-                    <a href="LIEN_ZCAL_VOLUME_MIXTE" target="_blank" class="btn-gold-3d" style="width: 100%; font-size: 0.85rem; padding: 12px;">Volume Mixte (Texturé) - 30€</a>
-                    <a href="LIEN_ZCAL_VOLUME_RUSSE" target="_blank" class="btn-gold-3d" style="width: 100%; font-size: 0.85rem; padding: 12px;">Volume Russe (Intense) - 30€</a>
+                    <a href="https://zcal.co/" target="_blank" class="btn-gold-3d" style="width: 100%; font-size: 0.85rem; padding: 15px; text-align: center; border-radius: 8px;">Cils à Cils (Naturel) - 30€</a>
+                    <a href="https://zcal.co/" target="_blank" class="btn-gold-3d" style="width: 100%; font-size: 0.85rem; padding: 15px; text-align: center; border-radius: 8px;">Volume Mixte (Texturé) - 30€</a>
+                    <a href="https://zcal.co/" target="_blank" class="btn-gold-3d" style="width: 100%; font-size: 0.85rem; padding: 15px; text-align: center; border-radius: 8px;">Volume Russe (Intense) - 30€</a>
                 </div>
             </div>
 
             <div class="form-dark-box" style="flex: 1;">
                 <h3>MAKEUP & SHOOTINGS</h3>
-                <p>Remplissez ce formulaire pour m'envoyer votre projet de mise en beauté ou direction artistique.</p>
+                <p>Remplissez ce formulaire pour m'envoyer votre projet. Je vous recontacterai rapidement.</p>
                 
-               <form id="vipForm">
+                <form id="vipForm">
                     <select id="prestationChoice" required>
                         <option value="">Sélectionnez la prestation...</option>
                         <option value="Shooting / Éditoriaux">Shooting / Éditoriaux</option>
                         <option value="Makeup Mariées">Makeup Mariées</option>
                         <option value="Makeup Invitées / Occasion">Makeup Invitées / Anniversaire</option>
+                        <option value="Makeup Pro & Tournages">Makeup Pro & Tournages</option>
                     </select>
                     
-                    <input type="text" id="clientName" placeholder="Votre Nom" required>
+                    <input type="text" id="clientName" placeholder="Votre Nom et Prénom" required>
                     <input type="tel" id="clientPhone" placeholder="Votre Téléphone" required>
-                    <input type="number" id="clientNb" placeholder="Nb personnes" required>
-                    <input type="text" id="clientDate" placeholder="Date & Lieu" required>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="number" id="clientNb" placeholder="Nb pers." required style="flex: 1;">
+                        <input type="text" id="clientDate" placeholder="Date & Lieu visés" required style="flex: 2;">
+                    </div>
                     
-                    <textarea id="clientDetails" placeholder="Détaillez votre projet..." rows="4" required></textarea>
+                    <textarea id="clientDetails" placeholder="Détaillez votre projet (inspirations, horaires souhaités...)" rows="5" required></textarea>
                     
-                    <button type="submit" class="btn-gold-3d" style="width: 100%; border-radius: 5px;">Créer ma demande</button>
+                    <button type="submit" class="btn-gold-3d" style="width: 100%; border-radius: 8px; margin-top: 10px;">Créer ma demande VIP</button>
                 </form>
             </div>
 
-        </div> <div class="thank-you-section">
+        </div> 
+
+        <div class="thank-you-section">
             <h2 class="thank-you-title">Thank you, see you soon</h2>
-            
             <ul class="social-list">
-                <li>
-                    <i class="fa-brands fa-facebook social-icon"></i>
-                    <span class="social-text-cursive">zoeya_gloww</span>
-                </li>
-                <li>
-                    <i class="fa-solid fa-location-dot social-icon"></i>
-                    <span class="social-text-cursive">Île-de-France</span>
-                </li>
-                <li>
-                    <i class="fa-solid fa-phone-volume social-icon"></i>
-                    <span style="font-family: var(--font-cursive); font-size: 1.5rem; color: var(--gold-primary);">+33 7 59 82 73 57</span>
-                </li>
-                <li>
-                    <i class="fa-brands fa-instagram social-icon"></i>
-                    <span style="font-family: var(--font-body); font-size: 1.2rem; color: var(--gold-primary);">Zoelya_</span>
-                </li>
+                <li><i class="fa-brands fa-facebook social-icon"></i><span class="social-text-cursive">zoeya_gloww</span></li>
+                <li><i class="fa-solid fa-location-dot social-icon"></i><span class="social-text-cursive">Île-de-France</span></li>
+                <li><i class="fa-solid fa-phone-volume social-icon"></i><span style="font-family: var(--font-cursive); font-size: 1.5rem; color: var(--gold-primary);">+33 7 59 82 73 57</span></li>
+                <li><i class="fa-brands fa-instagram social-icon"></i><span style="font-family: var(--font-body); font-size: 1.2rem; color: var(--gold-primary);">Zoelya_</span></li>
             </ul>
         </div>
 
     </section>
-<footer class="legal-footer">
+
+    <footer class="legal-footer">
         <a href="mentions-legales.html">Mentions Légales</a>
         <span class="separator">|</span>
         <a href="cgv.html">CGV</a>
     </footer>
+
     <script>
         document.getElementById('vipForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Empêche le rechargement de la page
-
-            // Récupération des données
+            e.preventDefault();
             const prestation = document.getElementById('prestationChoice').value;
             const nom = document.getElementById('clientName').value;
             const tel = document.getElementById('clientPhone').value;
@@ -102,32 +95,26 @@
             const dateLieu = document.getElementById('clientDate').value;
             const details = document.getElementById('clientDetails').value;
 
-            // 1. CRÉATION DE L'OBJET DYNAMIQUE
-            const subject = "Nouvelle demande VIP : " + prestation + " - " + nom;
-
-            // 2. CRÉATION DU CORPS DU MAIL (Très épuré et pro)
-            const body = 
-"Bonjour Zoeya,\n\n" +
-"Vous avez reçu une nouvelle demande de prestation via votre site web.\n\n" +
-"--------------------------------------------------\n" +
-"DÉTAILS DE LA RÉSERVATION\n" +
-"--------------------------------------------------\n" +
-"✦ Prestation souhaitée : " + prestation + "\n" +
-"✦ Nom du client : " + nom + "\n" +
-"✦ Téléphone : " + tel + "\n" +
-"✦ Nombre de personnes : " + nb + "\n" +
-"✦ Date & Lieu : " + dateLieu + "\n\n" +
-"--------------------------------------------------\n" +
-"DESCRIPTION DU PROJET\n" +
-"--------------------------------------------------\n" +
+            const subject = "Demande VIP : " + prestation + " - " + nom;
+            const body = "Bonjour Zoeya,\n\nUne nouvelle demande est arrivée depuis votre site.\n\n" +
+"====================\n" +
+"RÉSUMÉ DE LA DEMANDE\n" +
+"====================\n" +
+"• Prestation : " + prestation + "\n" +
+"• Client(e) : " + nom + "\n" +
+"• Téléphone : " + tel + "\n" +
+"• Pour : " + nb + " personne(s)\n" +
+"• Date/Lieu : " + dateLieu + "\n\n" +
+"====================\n" +
+"DÉTAILS DU PROJET\n" +
+"====================\n" +
 details + "\n\n" +
-"--------------------------------------------------\n" +
-"Message généré automatiquement depuis Zoeya Gloww.";
+"--------------------------------\n" +
+"Envoyé via zoeyagloww.com";
 
-            // 3. ENVOI VERS L'APPLICATION MAIL
-            // On encode le texte pour que les espaces et les sauts de ligne passent bien sur téléphone
             window.location.href = "mailto:Zoeyaglowwparis@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
         });
     </script>
+
 </body>
 </html>
