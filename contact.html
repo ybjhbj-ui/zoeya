@@ -26,31 +26,36 @@
 
         <div class="booking-container">
             
-            <div class="form-dark-box" style="flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+           <div class="form-dark-box" style="flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center;">
                 <h3>LASH STUDIO (Cils)</h3>
-                <p style="margin-bottom: 30px;">Réservation instantanée pour vos poses de cils. Accédez directement à mon agenda en ligne.</p>
-                <div style="font-size: 4rem; margin-bottom: 40px;">👁️</div>
-                <a href="https://zcal.co/" target="_blank" class="btn-gold-3d" style="width: 100%;">Réserver sur Zcal</a>
+                <p style="margin-bottom: 20px;">Sélectionnez votre pose pour accéder directement à mon agenda en ligne.</p>
+                <div style="font-size: 3rem; margin-bottom: 20px;">👁️</div>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <a href="LIEN_ZCAL_CILS_A_CILS" target="_blank" class="btn-gold-3d" style="width: 100%; font-size: 0.85rem; padding: 12px;">Cils à Cils (Naturel) - 30€</a>
+                    <a href="LIEN_ZCAL_VOLUME_MIXTE" target="_blank" class="btn-gold-3d" style="width: 100%; font-size: 0.85rem; padding: 12px;">Volume Mixte (Texturé) - 30€</a>
+                    <a href="LIEN_ZCAL_VOLUME_RUSSE" target="_blank" class="btn-gold-3d" style="width: 100%; font-size: 0.85rem; padding: 12px;">Volume Russe (Intense) - 30€</a>
+                </div>
             </div>
 
             <div class="form-dark-box" style="flex: 1;">
                 <h3>MAKEUP & SHOOTINGS</h3>
                 <p>Remplissez ce formulaire pour m'envoyer votre projet de mise en beauté ou direction artistique.</p>
                 
-                <form action="mailto:Zoeyaglowwparis@gmail.com?subject=Nouvelle%20Demande%20VIP" method="POST" enctype="text/plain">
-                    <select name="01_Prestation" required>
+               <form id="vipForm">
+                    <select id="prestationChoice" required>
                         <option value="">Sélectionnez la prestation...</option>
-                        <option value="Shooting">Shooting / Éditoriaux</option>
-                        <option value="Makeup_Mariee">Makeup Mariées</option>
-                        <option value="Makeup_Invitee">Makeup Invitées / Anniversaire</option>
+                        <option value="Shooting / Éditoriaux">Shooting / Éditoriaux</option>
+                        <option value="Makeup Mariées">Makeup Mariées</option>
+                        <option value="Makeup Invitées / Occasion">Makeup Invitées / Anniversaire</option>
                     </select>
                     
-                    <input type="text" name="02_Nom" placeholder="Votre Nom" required>
-                    <input type="tel" name="03_Telephone" placeholder="Votre Téléphone" required>
-                    <input type="number" name="04_Nb_Personnes" placeholder="Nb personnes" required>
-                    <input type="text" name="05_Date_Lieu" placeholder="Date & Lieu" required>
+                    <input type="text" id="clientName" placeholder="Votre Nom" required>
+                    <input type="tel" id="clientPhone" placeholder="Votre Téléphone" required>
+                    <input type="number" id="clientNb" placeholder="Nb personnes" required>
+                    <input type="text" id="clientDate" placeholder="Date & Lieu" required>
                     
-                    <textarea name="06_Details" placeholder="Détaillez votre projet..." rows="4" required></textarea>
+                    <textarea id="clientDetails" placeholder="Détaillez votre projet..." rows="4" required></textarea>
                     
                     <button type="submit" class="btn-gold-3d" style="width: 100%; border-radius: 5px;">Créer ma demande</button>
                 </form>
@@ -85,5 +90,44 @@
         <span class="separator">|</span>
         <a href="cgv.html">CGV</a>
     </footer>
+    <script>
+        document.getElementById('vipForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Empêche le rechargement de la page
+
+            // Récupération des données
+            const prestation = document.getElementById('prestationChoice').value;
+            const nom = document.getElementById('clientName').value;
+            const tel = document.getElementById('clientPhone').value;
+            const nb = document.getElementById('clientNb').value;
+            const dateLieu = document.getElementById('clientDate').value;
+            const details = document.getElementById('clientDetails').value;
+
+            // 1. CRÉATION DE L'OBJET DYNAMIQUE
+            const subject = "Nouvelle demande VIP : " + prestation + " - " + nom;
+
+            // 2. CRÉATION DU CORPS DU MAIL (Très épuré et pro)
+            const body = 
+"Bonjour Zoeya,\n\n" +
+"Vous avez reçu une nouvelle demande de prestation via votre site web.\n\n" +
+"--------------------------------------------------\n" +
+"DÉTAILS DE LA RÉSERVATION\n" +
+"--------------------------------------------------\n" +
+"✦ Prestation souhaitée : " + prestation + "\n" +
+"✦ Nom du client : " + nom + "\n" +
+"✦ Téléphone : " + tel + "\n" +
+"✦ Nombre de personnes : " + nb + "\n" +
+"✦ Date & Lieu : " + dateLieu + "\n\n" +
+"--------------------------------------------------\n" +
+"DESCRIPTION DU PROJET\n" +
+"--------------------------------------------------\n" +
+details + "\n\n" +
+"--------------------------------------------------\n" +
+"Message généré automatiquement depuis Zoeya Gloww.";
+
+            // 3. ENVOI VERS L'APPLICATION MAIL
+            // On encode le texte pour que les espaces et les sauts de ligne passent bien sur téléphone
+            window.location.href = "mailto:Zoeyaglowwparis@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        });
+    </script>
 </body>
 </html>
