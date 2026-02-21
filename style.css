@@ -165,3 +165,30 @@ nav a { color: var(--text-white); text-decoration: none; font-size: 0.8rem; text
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .portfolio-item { height: 180px; }
 }
+/* =========================================
+   CORRECTIONS FINALES (Cadrage & Logo)
+   ========================================= */
+
+/* 1. Recadrage des visages sur les photos "Welcome" */
+.welcome-gallery .welcome-item:nth-child(1) img,
+.welcome-gallery .welcome-item:nth-child(3) img {
+    object-position: top center !important; /* Force le focus sur le visage */
+}
+
+/* 2. Espacement du logo en bas (Anti-chevauchement) */
+.bottom-logo-container {
+    margin-top: 70px !important; /* Pousse le logo vers le bas sur PC */
+}
+
+@media (max-width: 600px) {
+    .bottom-logo-container {
+        margin-top: 80px !important; /* Pousse le logo encore plus bas sur Mobile */
+        padding-top: 20px;
+    }
+    
+    /* On donne un peu plus de hauteur à la galerie sur mobile pour que les photos respirent */
+    .welcome-gallery {
+        height: 230px !important; 
+        margin-bottom: 40px !important;
+    }
+}
