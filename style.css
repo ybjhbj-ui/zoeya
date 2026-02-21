@@ -1,0 +1,167 @@
+/* =========================================
+   PALETTE "DARK LUXE" & VARIABLES
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+    --bg-black: #000000;     
+    --bg-dark: #050505;
+    --gold-primary: #D4AF37; 
+    --gold-text-gradient: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7);
+    --gold-button-gradient: linear-gradient(to bottom, #E5C06B, #B8860B);
+    --text-white: #ffffff;
+    --text-grey: #cccccc;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-cursive: 'Great Vibes', cursive;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { background-color: var(--bg-black); color: var(--text-white); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 25px; text-align: center; }
+
+/* =========================================
+   HEADER & LOGO IMAGE HAUT (Taille inchangée ici)
+   ========================================= */
+header { padding: 30px 20px 10px; text-align: center; }
+.logo-circle { 
+    width: 90px; height: 90px; 
+    border: 2px solid var(--gold-primary); 
+    border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center; 
+    margin: 0 auto;
+    padding: 5px; 
+}
+.logo-img-inside { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+
+/* Navigation */
+nav { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 15px; }
+nav a { color: var(--text-white); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+.btn-gold-outline { border: 1px solid var(--gold-primary); padding: 8px 18px; color: var(--gold-primary) !important; transition: 0.3s; }
+.btn-gold-outline:hover { background: var(--gold-primary); color: #000 !important; }
+
+/* =========================================
+   ÉLÉMENTS DÉCORATIFS (COURONNE AUGMENTÉE ICI)
+   ========================================= */
+.diadem-icon { font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 10px; display: block; }
+/* Taille de la couronne augmentée de 70px à 120px */
+.diadem-img { max-width: 120px; height: auto; margin: 0 auto 15px; display: block; } 
+.golden-line { width: 60px; height: 2px; background: var(--gold-primary); margin: 20px auto; }
+.golden-line-long { width: 120px; height: 2px; background: var(--gold-primary); margin: 20px auto 40px; }
+
+/* =========================================
+   TYPOGRAPHIES
+   ========================================= */
+.welcome-text { 
+    font-family: var(--font-heading);
+    font-size: 4rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 20px; 
+    line-height: 1;
+    background: var(--gold-text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.subtitle { font-family: var(--font-heading); font-size: 0.9rem; text-transform: uppercase; color: var(--gold-primary); letter-spacing: 3px; font-weight: 600; margin-bottom: 20px; }
+.contact-info { font-family: var(--font-body); font-size: 0.8rem; color: var(--text-grey); letter-spacing: 1px; margin-bottom: 40px; }
+
+.bio-titles { list-style: none; color: var(--text-grey); font-size: 1.1rem; margin-bottom: 30px; font-weight: 300; font-family: var(--font-heading); }
+.bio-titles li { margin-bottom: 10px; }
+.bio-name { font-family: var(--font-heading); font-size: 3rem; color: var(--gold-primary); font-weight: 400; letter-spacing: 5px; margin: 20px 0 0; text-transform: uppercase; }
+.bio-text { color: var(--text-white); font-size: 1rem; line-height: 1.8; margin-bottom: 25px; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* =========================================
+   GALERIE WELCOME & LOGO BAS (AUGMENTÉ ICI)
+   ========================================= */
+.welcome-gallery { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+.welcome-item { flex: 1; height: 280px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 4px; }
+.welcome-item img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Style pour le logo image en bas - Taille augmentée de 150px à 300px */
+.bottom-logo-container { margin-top: 40px; margin-bottom: 20px; }
+.bottom-logo-img { max-width: 300px; height: auto; display: block; margin: 0 auto; opacity: 0.8; }
+
+/* =========================================
+   BOUTONS 3D
+   ========================================= */
+.btn-gold-3d {
+    background: var(--gold-button-gradient); color: #000; font-family: var(--font-heading);
+    font-weight: 600; font-size: 1rem; padding: 12px 35px; border: none; border-radius: 50px;
+    cursor: pointer; text-transform: uppercase; letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); text-decoration: none; display: inline-block; transition: 0.3s;
+}
+.btn-gold-3d:hover { filter: brightness(1.2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6); }
+
+/* =========================================
+   PAGE PRESTATIONS
+   ========================================= */
+.prestation-block { margin-bottom: 60px; padding: 0 15px; }
+.prestation-title { font-family: var(--font-heading); font-size: 2rem; font-weight: 400; text-transform: uppercase; margin-bottom: 20px; text-align: center; letter-spacing: 2px; color: var(--gold-primary); }
+.prestation-row { display: flex; align-items: center; gap: 30px; background: #050505; border: 1px solid #111; padding: 15px; border-radius: 8px; }
+.prestation-img { width: 45%; height: 350px; }
+.prestation-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 5px; }
+.prestation-text { width: 55%; text-align: center; }
+.prestation-name { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
+.prestation-desc { font-size: 0.85rem; color: var(--text-grey); margin-bottom: 20px; line-height: 1.6; }
+.prestation-price { font-size: 0.9rem; margin-bottom: 25px; color: #fff; }
+.btn-portfolio-big { display: inline-block; background: var(--gold-button-gradient); color: #000; padding: 20px 40px; font-size: 1.5rem; font-family: var(--font-heading); border-radius: 8px; text-decoration: none; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); margin: 40px 0; }
+
+/* =========================================
+   PAGE CONTACT & FOOTER
+   ========================================= */
+.contact-header { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 20px; color: #fff; }
+.arrow-down { font-size: 3rem; color: var(--gold-primary); margin: 20px 0; }
+.form-dark-box { background: #080808; border: 1px solid #222; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); text-align: left; }
+.form-dark-box h3 { color: var(--gold-primary); font-family: var(--font-heading); font-size: 1.2rem; text-align: center; margin-bottom: 10px; }
+.form-dark-box p { text-align: center; font-size: 0.8rem; color: #888; margin-bottom: 20px; }
+.form-dark-box input, .form-dark-box textarea, .form-dark-box select { width: 100%; background: #000; border: 1px solid #222; color: #fff; padding: 15px; margin-bottom: 15px; border-radius: 5px; font-family: var(--font-body); font-size: 16px; }
+.form-dark-box input:focus, .form-dark-box textarea:focus, .form-dark-box select:focus { outline: none; border-color: var(--gold-primary); }
+
+.thank-you-section { margin-top: 80px; padding-bottom: 50px; }
+.thank-you-title { color: var(--gold-primary); font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 40px; }
+.social-list { list-style: none; display: flex; flex-direction: column; gap: 25px; align-items: center; }
+.social-list li { display: flex; align-items: center; gap: 15px; font-size: 1.2rem; }
+.social-icon { font-size: 2rem; color: var(--gold-primary); width: 40px; text-align: center; }
+.social-text-cursive { font-family: var(--font-cursive); font-size: 2.5rem; color: var(--gold-primary); }
+
+.legal-footer { width: 100%; margin-top: 40px; padding: 20px; border-top: 1px solid #111; text-align: center; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
+.legal-footer a { color: var(--text-grey); text-decoration: none; margin: 0 10px; transition: 0.3s; }
+.legal-footer a:hover { color: var(--gold-primary); }
+.legal-footer .separator { color: #333; }
+
+/* =========================================
+   PAGE PORTFOLIO (GRILLE & ZOOM)
+   ========================================= */
+.cat-title { font-family: var(--font-heading); color: var(--gold-primary); text-align: left; font-size: 1.8rem; border-bottom: 1px solid #222; padding-bottom: 10px; margin: 60px 0 30px; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+.portfolio-item { height: 250px; overflow: hidden; border-radius: 5px; border: 1px solid #222; background: #000; cursor: zoom-in; }
+.portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.portfolio-item:hover img { transform: scale(1.05); }
+.massive-grid:nth-of-type(1) .portfolio-item:nth-child(2) img { object-position: left center !important; }
+.massive-grid:nth-of-type(2) .portfolio-item:nth-child(2) img { object-position: top center !important; }
+.massive-grid:nth-of-type(3) .portfolio-item:nth-child(2) img, .massive-grid:nth-of-type(3) .portfolio-item:nth-child(14) img, .massive-grid:nth-of-type(3) .portfolio-item:nth-child(22) img { object-position: top center !important; }
+.lightbox { position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; }
+.lightbox.active { display: flex; }
+.lightbox-content { max-width: 90%; max-height: 85%; border: 2px solid var(--gold-primary); box-shadow: 0 0 30px rgba(212, 175, 55, 0.2); }
+.close-lightbox { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 40px; cursor: pointer; }
+
+/* =========================================
+   ADAPTATION MOBILE
+   ========================================= */
+@media (max-width: 600px) {
+    .welcome-text { font-size: 3.5rem; }
+    .subtitle { font-size: 0.75rem; letter-spacing: 2px; }
+    .welcome-gallery { height: 200px; gap: 10px; }
+    .bio-name { font-size: 2.2rem; letter-spacing: 3px; }
+    .logo-circle { width: 80px; height: 80px; }
+    /* Couronne mobile augmentée à 90px */
+    .diadem-img { max-width: 90px; } 
+    .prestation-row { flex-direction: column; padding: 10px; }
+    .prestation-img { width: 100%; height: 250px; }
+    .prestation-text { width: 100%; padding: 20px 10px; }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .portfolio-item { height: 180px; }
+}

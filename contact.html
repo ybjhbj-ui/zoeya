@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation • ZOEYA GLOWW</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+    <header>
+        <div class="logo-circle" style="width: 60px; height: 60px; margin: 0 auto 10px;">
+            <a href="index.html" style="text-decoration: none;">
+                <img src="logo.png" alt="ZG Logo" class="logo-img-inside" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none; font-size: 1.2rem;">ZG</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="container text-center" style="padding-top: 40px; flex: 1;">
+        
+        <h2 class="contact-header">Réservation</h2>
+        <p class="subtitle" style="margin-bottom: 30px;">Choisissez votre prestation</p>
+        <div class="arrow-down" style="margin-top: -10px;">⤵</div>
+
+        <div class="booking-container">
+            
+            <div class="form-dark-box" style="flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                <h3>LASH STUDIO (Cils)</h3>
+                <p style="margin-bottom: 30px;">Réservation instantanée pour vos poses de cils. Accédez directement à mon agenda en ligne.</p>
+                <div style="font-size: 4rem; margin-bottom: 40px;">👁️</div>
+                <a href="https://zcal.co/" target="_blank" class="btn-gold-3d" style="width: 100%;">Réserver sur Zcal</a>
+            </div>
+
+            <div class="form-dark-box" style="flex: 1;">
+                <h3>MAKEUP & SHOOTINGS</h3>
+                <p>Remplissez ce formulaire pour m'envoyer votre projet de mise en beauté ou direction artistique.</p>
+                
+                <form action="mailto:Zoeyaglowwparis@gmail.com?subject=Nouvelle%20Demande%20VIP" method="POST" enctype="text/plain">
+                    <select name="01_Prestation" required>
+                        <option value="">Sélectionnez la prestation...</option>
+                        <option value="Shooting">Shooting / Éditoriaux</option>
+                        <option value="Makeup_Mariee">Makeup Mariées</option>
+                        <option value="Makeup_Invitee">Makeup Invitées / Anniversaire</option>
+                    </select>
+                    
+                    <input type="text" name="02_Nom" placeholder="Votre Nom" required>
+                    <input type="tel" name="03_Telephone" placeholder="Votre Téléphone" required>
+                    <input type="number" name="04_Nb_Personnes" placeholder="Nb personnes" required>
+                    <input type="text" name="05_Date_Lieu" placeholder="Date & Lieu" required>
+                    
+                    <textarea name="06_Details" placeholder="Détaillez votre projet..." rows="4" required></textarea>
+                    
+                    <button type="submit" class="btn-gold-3d" style="width: 100%; border-radius: 5px;">Créer ma demande</button>
+                </form>
+            </div>
+
+        </div> <div class="thank-you-section">
+            <h2 class="thank-you-title">Thank you, see you soon</h2>
+            
+            <ul class="social-list">
+                <li>
+                    <i class="fa-brands fa-facebook social-icon"></i>
+                    <span class="social-text-cursive">zoeya_gloww</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-location-dot social-icon"></i>
+                    <span class="social-text-cursive">Île-de-France</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone-volume social-icon"></i>
+                    <span style="font-family: var(--font-cursive); font-size: 1.5rem; color: var(--gold-primary);">+33 7 59 82 73 57</span>
+                </li>
+                <li>
+                    <i class="fa-brands fa-instagram social-icon"></i>
+                    <span style="font-family: var(--font-body); font-size: 1.2rem; color: var(--gold-primary);">Zoelya_</span>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+<footer class="legal-footer">
+        <a href="mentions-legales.html">Mentions Légales</a>
+        <span class="separator">|</span>
+        <a href="cgv.html">CGV</a>
+    </footer>
+</body>
+</html>

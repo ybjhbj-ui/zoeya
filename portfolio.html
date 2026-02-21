@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio • ZOEYA GLOWW</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: var(--bg-black);">
+
+    <header style="padding-top: 20px;">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="index.html">
+                <img src="logo.png" alt="Zoeya Gloww Logo" style="max-height: 70px; object-fit: contain;">
+            </a>
+        </div>
+        <nav style="display: flex; justify-content: center; gap: 20px;">
+            <a href="index.html" class="btn-gold-outline">Accueil</a>
+            <a href="contact.html" class="btn-gold-outline">Réserver</a>
+        </nav>
+    </header>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <section class="container text-center" style="padding-top: 50px; min-height: 100vh;">
+        
+        <h1 class="welcome-text" style="font-size: 4rem; margin-bottom: 10px;">Portfolio</h1>
+        <p class="subtitle" style="margin-bottom: 50px;">L'art de sublimer</p>
+        
+        <h2 class="cat-title">Lash Studio</h2>
+        <div class="portfolio-grid massive-grid">
+            <div class="portfolio-item"><img src="cils-1.jpg" class="zoomable" alt="Cils"></div>
+            <div class="portfolio-item"><img src="cils-2.jpg" class="zoomable" alt="Cils"></div>
+        </div>
+
+        <h2 class="cat-title">Makeup Studio</h2>
+        <div class="portfolio-grid massive-grid">
+            <div class="portfolio-item"><img src="makeup-1.jpg" class="zoomable" alt="Makeup"></div>
+            <div class="portfolio-item"><img src="makeup-2.jpg" class="zoomable" alt="Makeup"></div>
+            <div class="portfolio-item"><img src="makeup-3.jpg" class="zoomable" alt="Makeup"></div>
+        </div>
+
+        <h2 class="cat-title">Shootings & DA</h2>
+        <div class="portfolio-grid massive-grid">
+            <div class="portfolio-item"><img src="shooting-1.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-2.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-3.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-4.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-5.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-6.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-7.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-8.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-9.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-10.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-11.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-12.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-13.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-14.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-15.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-16.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-17.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-18.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-19.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-20.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-21.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-22.jpg" class="zoomable"></div>
+            <div class="portfolio-item"><img src="shooting-23.jpg" class="zoomable"></div>
+        </div>
+
+        <div style="margin: 80px 0 60px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <p style="font-family: var(--font-cursive); color: var(--gold-primary); font-size: 2.5rem; margin-bottom: 10px;">Prête à réserver ?</p>
+            
+            <a href="contact.html" class="btn-gold-3d" style="width: 100%; max-width: 300px;">Réserver un créneau</a>
+            <a href="prestations.html" class="btn-gold-outline" style="width: 100%; max-width: 300px; padding: 12px 30px; text-align: center;">Voir les tarifs</a>
+            
+            <a href="index.html" style="color: var(--text-grey); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 20px;">➔ Retour à l'accueil</a>
+        </div>
+
+    </section>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-lightbox');
+
+        document.querySelectorAll('.zoomable').forEach(image => {
+            image.addEventListener('click', e => {
+                lightbox.classList.add('active');
+                lightboxImg.src = e.target.src;
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+    </script>
+    <footer class="legal-footer">
+        <a href="mentions-legales.html">Mentions Légales</a>
+        <span class="separator">|</span>
+        <a href="cgv.html">CGV</a>
+    </footer>
+</body>
+</html>
